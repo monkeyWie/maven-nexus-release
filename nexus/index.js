@@ -60,6 +60,10 @@ class Nexus {
         },
       });
       const closeEvents = result.data.filter((e) => e.name === 'close')[0].events;
+      const failEvents = closeEvents.filter((e) => e.name === 'ruleFailed');
+      if (failEvents.length) {
+        throw new Error('Nexus close failed:', JSON.stringify(failEvents));
+      }
       if (closeEvents[closeEvents.length - 1].name === 'repositoryClosed') {
         break;
       }
