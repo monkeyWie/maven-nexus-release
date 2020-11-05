@@ -1,0 +1,18 @@
+name: "Maven Release"
+description: "Publish jar to maven center"
+branding:
+  icon: 'upload'
+  color: 'green'
+inputs:
+  maven-repo-server-id:
+    description: "Maven server repository id to push the artefacts to"
+    required: true
+  maven-repo-server-username:
+    description: "Maven server repository username"
+    required: true
+  maven-repo-server-password:
+    description: "Maven server repository password"
+    required: true
+runs:
+  using: "node12"
+  main: "index.js"
