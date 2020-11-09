@@ -46,7 +46,7 @@ steps:
       gpg-private-key: ${{ secrets.MAVEN_GPG_PRIVATE_KEY }} # Value of the GPG private key to import
 
   - name: Publish to Apache Maven Central
-    run: mvn clean deploy -P release
+    run: mvn clean deploy
     env:
       MAVEN_USERNAME: xxx
       MAVEN_CENTRAL_TOKEN: ${{ secrets.MAVEN_CENTRAL_TOKEN }}
