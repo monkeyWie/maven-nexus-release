@@ -53,7 +53,7 @@ steps:
       MAVEN_GPG_PASSPHRASE: ${{ secrets.MAVEN_GPG_PASSPHRASE }}
 
   - name: Release on nexus
-    uses: monkeyWie/maven-nexus-release@v1
+    uses: monkeyWie/maven-nexus-release@v1.0.0
     with:
       maven-repo-server-username: xxx
       maven-repo-server-password: ${{ secrets.MAVEN_CENTRAL_TOKEN }}
